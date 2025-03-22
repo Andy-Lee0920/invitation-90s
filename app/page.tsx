@@ -41,7 +41,7 @@ export default function Home() {
           </div>
 
           {/* 사진 위에 반투명 오버레이와 문구 */}
-          <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center pb-0 text-white px-4">
+          <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-end pb-20 text-white px-4">
             <p className="text-3xl mb-2 font-semibold">정효숙님 구순 잔치에</p>
             <br />
             <p className="text-3xl mb-2 font-semibold">가족분들을 초대합니다</p>
@@ -109,10 +109,8 @@ export default function Home() {
             <div className="w-1/4 border-t border-deep-green opacity-30"></div>
           </div>
 
-          <h1 className="text-2xl font-bold text-gray-800">
-            전통구이 상차림 龍
-          </h1>
-          <h3 className="text-base text-gray-400">HANLIKWAN YONG COURESE</h3>
+          <h1 className="text-2xl font-bold text-gray-800">전통구이 상차림</h1>
+          <h6 className="text-sm text-gray-400">HANLIKWAN YONG COURESE</h6>
           <p className="text-gray-600 flex items-center justify-center gap-2 mt-5">
             계절죽
             <br />
@@ -258,14 +256,14 @@ export default function Home() {
             </h2>
             <p className="font-medium text-gray-800">지하철</p>
             <ul className="list-disc ml-6 text-sm mt-1">
-              <li>3호선, 분당선 수서역 5-2번 출구에서 도보 15분</li>
-              <li>GTX-A 노선 수서역 이용 가능</li>
-              <li>SRT 수서역 이용 가능</li>
+              <li>3호선, 압구정역 2번 출구에서 도보 10분</li>
+              <li>버스 이용시, 현대아파트 정류소 이용</li>
             </ul>
 
-            <p className="font-medium text-gray-800 mt-4">택시</p>
+            <p className="font-medium text-gray-800 mt-4">자가용</p>
             <ul className="list-disc ml-6 text-sm mt-1">
-              <li>수서역 5-2번 출구에서 택시 3분</li>
+              <li>동호대교 또는 성수대교 이용</li>
+              <li>올림픽대로 이용</li>
             </ul>
           </div>
 
@@ -276,7 +274,7 @@ export default function Home() {
             </h2>
             <ul className="list-disc ml-6 text-sm mt-1">
               <li>넓은 식당 건물 주차장 이용 가능</li>
-              <li>발렛비 무료</li>
+              <li>발렛비 3000원</li>
             </ul>
           </div>
           <main className="mt-15">
