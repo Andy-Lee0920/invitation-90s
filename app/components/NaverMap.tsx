@@ -19,7 +19,7 @@ export default function NaverMap() {
 
       const map = new window.naver.maps.Map(mapRef.current, {
         center: new window.naver.maps.LatLng(LAT, LONG),
-        zoom: 12,
+        zoom: 16,
       });
 
       new window.naver.maps.Marker({
