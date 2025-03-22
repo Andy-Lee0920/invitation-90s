@@ -101,34 +101,6 @@ export default function Home() {
           </p>
         </section>
 
-        {/* 5. 추가 정보 섹션 (INFORMATION) */}
-        <section className="px-4 pt-20 pb-10 text-center">
-          <div className="flex items-center justify-center mb-5">
-            <div className="w-1/4 border-t border-deep-green opacity-30"></div>
-            <span className="mx-3 text-gray-500">MENU</span>
-            <div className="w-1/4 border-t border-deep-green opacity-30"></div>
-          </div>
-
-          <h1 className="text-2xl font-bold text-gray-800">전통구이 상차림</h1>
-          <h6 className="text-sm text-gray-400">HANLIKWAN YONG COURESE</h6>
-          <p className="text-gray-600 flex items-center justify-center gap-2 mt-5">
-            계절죽
-            <br />
-            차돌박이구이와 항채무침
-            <br />
-            해물파전
-            <br />
-            양념꽃게무침
-            <br />
-            등심불고기 or 전통갈비구이
-            <br />
-            식사
-            <br />
-            후식
-            <br />
-          </p>
-        </section>
-
         {/* 4. 갤러리 (좌우로 스크롤 가능한 이미지 슬라이드) */}
         <section className="px-4">
           <Gallery />
@@ -190,6 +162,34 @@ export default function Home() {
             })}
           </div>
         </div>
+
+        {/* 5. 추가 정보 섹션 (INFORMATION) */}
+        <section className="px-4 pt-20 pb-10 text-center">
+          <div className="flex items-center justify-center mb-5">
+            <div className="w-1/4 border-t border-deep-green opacity-30"></div>
+            <span className="mx-3 text-gray-500">MENU</span>
+            <div className="w-1/4 border-t border-deep-green opacity-30"></div>
+          </div>
+
+          <h1 className="text-2xl font-bold text-gray-800">전통구이 상차림</h1>
+          <h6 className="text-sm text-gray-400">HANLIKWAN YONG COURESE</h6>
+          <p className="text-gray-600 flex items-center justify-center gap-2 mt-5">
+            계절죽
+            <br />
+            차돌박이구이와 항채무침
+            <br />
+            해물파전
+            <br />
+            양념꽃게무침
+            <br />
+            등심불고기 or 전통갈비구이
+            <br />
+            식사
+            <br />
+            후식
+            <br />
+          </p>
+        </section>
 
         <section className="bg-white py-20 px-6">
           <div className="max-w-2xl mx-auto text-center">

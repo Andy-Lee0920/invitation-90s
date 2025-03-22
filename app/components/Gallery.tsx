@@ -2,10 +2,17 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const images = Array.from(
-  { length: 11 },
-  (_, i) => `/image/gallery/gallery (${i + 1}).jpg`
-);
+const videoIndex = 12;
+const mediaItems = Array.from({ length: 12 }, (_, i) => {
+  const index = i + 1;
+  return {
+    type: index === videoIndex ? "video" : "image", // 예시: videoIndex번째는 mp4로 처리
+    src:
+      index === videoIndex
+        ? `/image/gallery/gallery (${i + 1}).mp4`
+        : `/image/gallery/gallery (${i + 1}).jpg`,
+  };
+});
 
 export default function Gallery() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -22,12 +29,14 @@ export default function Gallery() {
 
   const prevImage = (e?: React.MouseEvent<HTMLButtonElement>) => {
     e?.stopPropagation();
-    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+    setCurrentIndex(
+      (prev) => (prev - 1 + mediaItems.length) % mediaItems.length
+    );
   };
 
   const nextImage = (e?: React.MouseEvent<HTMLButtonElement>) => {
     e?.stopPropagation();
-    setCurrentIndex((prev) => (prev + 1) % images.length);
+    setCurrentIndex((prev) => (prev + 1) % mediaItems.length);
   };
 
   return (
@@ -37,25 +46,33 @@ export default function Gallery() {
         <span className="mx-3 text-gray-500">GALLERY</span>
         <div className="w-1/4 border-t border-deep-green opacity-30"></div>
       </div>
-
-      {/* 갤러리 리스트 */}
+      {/* 갤러리 리스트 */}{" "}
       <div className="flex gap-4 overflow-x-auto snap-x snap-proximity">
-        {images.map((src, i) => (
+        {mediaItems.map((item, i) => (
           <div
             key={i}
             className="relative w-72 h-48 flex-shrink-0 snap-center cursor-pointer"
             onClick={() => openLightbox(i)}
           >
-            <Image
-              src={src}
-              alt={`이미지 ${i + 1}`}
-              fill
-              className="object-cover rounded-lg"
-            />
+            {item.type === "image" ? (
+              <Image
+                src={item.src}
+                alt={`이미지 ${i + 1}`}
+                fill
+                className="object-cover rounded-lg"
+              />
+            ) : (
+              <video
+                src={item.src}
+                className="object-cover w-full h-full rounded-lg"
+                muted
+                autoPlay
+                loop
+              />
+            )}
           </div>
         ))}
       </div>
-
       {/* 라이트박스 */}
       {lightboxOpen && (
         <div
@@ -66,17 +83,26 @@ export default function Gallery() {
             className="relative max-w-3xl max-h-full"
             onClick={(e) => e.stopPropagation()}
           >
-            <Image
-              src={images[currentIndex]}
-              alt={`이미지 ${currentIndex + 1}`}
-              width={800}
-              height={600}
-              className="object-contain rounded"
-            />
+            {mediaItems[currentIndex].type === "image" ? (
+              <Image
+                src={mediaItems[currentIndex].src}
+                alt={`이미지 ${currentIndex + 1}`}
+                width={800}
+                height={600}
+                className="object-contain rounded"
+              />
+            ) : (
+              <video
+                src={mediaItems[currentIndex].src}
+                controls
+                autoPlay
+                className="max-w-full max-h-[80vh] rounded"
+              />
+            )}
 
             {/* 좌측 하단 이미지 위치 표시 */}
             <div className="absolute bottom-4 left-4 text-white bg-black bg-opacity-50 px-3 py-1 rounded">
-              {currentIndex + 1} / {images.length}
+              {currentIndex + 1} / {mediaItems.length}
             </div>
 
             {/* 이전 버튼 */}
