@@ -22,5 +22,12 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "CustomFont";
+}
+
+@font-face {
+  font-family: "CustomFont"; /* 원하는 폰트 이름 */
+  src: url("/fonts/custom-font.otf") format("opentype"); /* 경로 맞게 수정 */
+  font-weight: normal;
+  font-style: normal;
 }
